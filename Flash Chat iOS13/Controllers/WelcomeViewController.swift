@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import CLTypingLabel
 
 class WelcomeViewController: UIViewController {
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: CLTypingLabel!
     
+    let delay = 0.1
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        titleLabel.charInterval = delay
+        titleLabel.text = K.appName
     }
     
 
