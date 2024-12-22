@@ -31,6 +31,7 @@ bool UPB_PRIVATE(_upb_Message_AddUnknown)(upb_Message* msg, const char* data,
   upb_Message_Internal* in = msg->internal;
   memcpy(UPB_PTR_AT(in, in->unknown_end, char), data, len);
   in->unknown_end += len;
+  return true;
 }
 
 void _upb_Message_DiscardUnknown_shallow(upb_Message* msg) {
