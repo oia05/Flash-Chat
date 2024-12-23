@@ -14,10 +14,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     @IBAction func loginPressed(_ sender: UIButton) {
         guard let email = emailTextfield.text else {return}
         guard let password = passwordTextfield.text else {return}

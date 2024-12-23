@@ -13,6 +13,19 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let newAppearance = navigationController?.navigationBar.scrollEdgeAppearance?.copy()
+        newAppearance?.backgroundColor = UIColor(named: "BrandLightBlue")
+        navigationController?.navigationBar.scrollEdgeAppearance = newAppearance
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        let newAppearance = navigationController?.navigationBar.scrollEdgeAppearance?.copy()
+        newAppearance?.backgroundColor = UIColor(named: "BrandBlue")
+        navigationController?.navigationBar.scrollEdgeAppearance = newAppearance
+    }
     
     @IBAction func registerPressed(_ sender: UIButton) {
         guard let email = emailTextfield.text else {return}
